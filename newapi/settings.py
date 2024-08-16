@@ -132,10 +132,12 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CORS_ALLOWED_ORIGIN_REGEXES = [
-    r"^https://.*\.vercel\.app$",  # Allow subdomains of vercel.app
-    r"^https://.*\.onrender\.com$",  # Allow subdomains of onrender.com
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8000",
+    "https://ascclient.vercel.app",
+    "https://server-ophc.onrender.com"
 ]
+
 
 ALLOWED_HOSTS = ['*']
 

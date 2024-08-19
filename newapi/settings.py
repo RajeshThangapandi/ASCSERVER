@@ -26,8 +26,7 @@ SECRET_KEY = "django-insecure-d&b#e#nqv-1u)-snbum0p=xg45xgms(p-6y^2d)fzlxh2fr6v9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-
-
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -38,24 +37,21 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-     'rest_framework',
-    'api',
-    'corsheaders',
+    "rest_framework",
+    "api",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-     'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
-     "whitenoise.middleware.WhiteNoiseMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = "newapi.urls"
@@ -125,19 +121,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
-STATIC_ROOT="staticfiles"
+STATIC_ROOT = "staticfiles"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# CORS settings
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
     "https://ascclient.vercel.app",
-    "https://server-ophc.onrender.com"
+    "https://server-ophc.onrender.com",
 ]
-
-
-ALLOWED_HOSTS = ['*']
-
